@@ -18,20 +18,20 @@ let getHumanChoice = () => {
     
 }
 
-// console.log(human);
+// console.log(getHumanChoice());
 
 let playGame=() =>{
     let humanScore=0;
     let computerScore=0;
     
-    let playRound = (computerChoice, humanChoice) => {
+    let playRound = (humanChoice, computerChoice) => {
     if(computerChoice == humanChoice){
         console.log("its a draw !");    
     }
-    else if(humanChoice=="rock" && computerChoice=="scissors" ||
-       humanChoice=="paper"&& computerChoice=="rock" ||
-       humanChoice=="scissors"&& computerChoice=="paper"
-    ){
+    else if(humanChoice==="rock" && computerChoice==="scissors" ||
+       humanChoice==="paper"&& computerChoice==="rock" ||
+       humanChoice==="scissors"&& computerChoice==="paper"){
+
         console.log("you win this round!!!");
         
         humanScore++;
@@ -49,20 +49,28 @@ let playGame=() =>{
     
 }
     
-    let a=prompt('enter rounds');
+    let a=prompt('enter the number of rounds you wish to play');
     for(let i=1;i<=a;i++){
         console.log("round: "+i);
-        const compterSelection=getComputerChoice();
+        const computerSelection=getComputerChoice();
         const humanSelection=getHumanChoice();
         
-        playRound(humanSelection, compterSelection);        
+        console.log("you chose: "+ humanSelection);
+        console.log("computer chose: "+ computerSelection);
+        
+        playRound(humanSelection, computerSelection);        
     }
 
+
     if (humanScore>computerScore){
-        console.log("***you won the game***");        
+        console.log("***you won the game by "+ (humanScore-computerScore) + " points***");        
+    }
+    else if(humanScore==computerScore){
+        console.log("### it's a draw ###");
+        
     }
     else{
-        console.log("---you lost the game---");
+        console.log("---you lost the game by "+ (computerScore-humanScore) + " points---");
         
     }
 }
