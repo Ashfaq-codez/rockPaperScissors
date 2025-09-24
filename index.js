@@ -9,7 +9,7 @@ let getComputerChoice = () => {
     else 
         return "scissors";
 }
-// let computer=getComputerChoice();
+
 // console.log(getComputerChoice());
 
 let getHumanChoice = () => {
@@ -17,14 +17,8 @@ let getHumanChoice = () => {
     return humansChoice.toLowerCase();
     
 }
-// let human=getHumanChoice();
+
 // console.log(human);
-
-
-
-
-
-
 
 let playGame=() =>{
     let humanScore=0;
